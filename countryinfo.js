@@ -120,7 +120,7 @@ a {
     }
     if(parsedurl.pathname=='/info'){
         let country=parsedurl.searchParams.get('country');
-        const apireq=https.get(`https://restcountries.com/v3.1/name/${country}`,(apires)=>{
+        const apireq=https.get(`https://restcountries.com/v3.1/name/${encodeURIComponent(country)}`,(apires)=>{
             let data="";
             apires.on("data",(chunks)=>{
                 data+=chunks;
